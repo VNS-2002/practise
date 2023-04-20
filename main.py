@@ -1,16 +1,22 @@
-# This is a sample Python script.
+from selenium import webdriver
+import time
+from selenium.webdriver.common.keys import Keys
+print("sample test case started")
+driver = webdriver.Chrome()
+driver.maximize_window()
+driver.get("http://localhost/workshop/signup.php") //here//
+time.sleep(10)
+driver.find_element("name", "username").send_keys("vinayak")
+time.sleep(10)
+driver.find_element("name", "phone").send_keys("9076260354")
+time.sleep(10)
+driver.find_element("name", "email").send_keys("vinayak12528@gmail.com")
+time.sleep(10)
+driver.find_element("name", "password").send_keys("abcd1234")
+time.sleep(4)
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+driver.find_element("name", "submit").send_keys(Keys.ENTER)
+time.sleep(4)
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+driver.close()
+print("sample test case successfully completed")
